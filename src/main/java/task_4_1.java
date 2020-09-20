@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Base {
+public class task_4_1 {
     public static void main(String[] args) {
         int[] array = new int[20];
         Random rand = new Random(System.currentTimeMillis());
@@ -9,13 +9,27 @@ public class Base {
             array[x] = q;
         }
         for (int y = 0; y < array.length; y++)
-            System.out.println(array[y]);
-        
+            System.out.print(array[y]+" ");
+
         System.out.println();
         System.out.println("Самое большое число: " + getMax(array));
         System.out.println("Самое маленькое число: " + getMin(array));
-    }
 
+        for (int y = 0; y < array.length; y++) {
+            if (array[y] == getMax(array)) {
+                for (int x = 0; x < array.length; x++){
+                    if (array[x] == getMin(array)){
+                        int tmp2 = array[y];
+                        int tmp = array[x];
+                        array[y] = tmp;
+                        array[x] = tmp2;
+                    }
+                }
+            }
+        }
+        for (int y = 0; y < array.length; y++)
+            System.out.print(array[y]+" ");
+    }
     public static int getMax(int[] arr) {
         int max = arr[0];
         for (int i = 1; i < arr.length; i++) {
@@ -25,7 +39,6 @@ public class Base {
         }
         return max;
     }
-
     public static int getMin(int[] arr) {
         int min = arr[0];
         for (int i = 1; i < arr.length; i++) {
