@@ -31,18 +31,19 @@ public class task_4_1 {
             System.out.print(array[y]+" ");
     }
     public static int getMax(int[] arr) {
-        int max = arr[0];
+        int max = -10;
         for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < 0 ){
             if (arr[i] > max) {
                 max = arr[i];
-            }
+            }}
         }
         return max;
     }
     public static int getMin(int[] arr) {
-        int min = arr[0];
+        int min = 10;
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < min) {
+            if (arr[i] < min && arr[i] >= 1) {
                 min = arr[i];
             }
         }
