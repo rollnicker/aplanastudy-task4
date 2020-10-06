@@ -40,7 +40,7 @@ public class task_4_1 {
         }
         return max;
     }
-    public static int getMin(int[] arr) {
+    public static int getMin(int[]arr) {
         int min = 10;
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] < min && arr[i] >= 1) {
